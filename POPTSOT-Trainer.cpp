@@ -352,6 +352,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
         break;
 
     case WM_DESTROY:
+        KillTimer(hMainWnd, 1);
         SafeCloseProcessHandle();
         PostQuitMessage(0);
         break;
@@ -410,4 +411,5 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 
     return 0;
 }
+
 
